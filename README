@@ -1,3 +1,34 @@
-pepepepe
+#añadir datos
+git config --global user.name "nombre_usuario"
+git config --global user.email "email_id"
 
-pablo
+#hacer init en la carpeta correspondiente y despues pararse en ese directorio
+git init Mytest
+
+#editar todo lo necesario
+
+#aplicar add a todos los files modificados
+git add "file.txt"
+
+#hacer commit
+git commit -m "mensaje"
+
+#crear el origin
+git remote add origin "https://link"
+
+#hacer push
+git push origin master
+
+
+
+#///////////////////////////
+
+#hacer init
+git init
+
+
+#añadir datos
+git config --global user.name "nombre_usuario"
+git config --global user.email "email_id"
+
+#hacer pull
