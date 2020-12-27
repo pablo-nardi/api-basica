@@ -1,25 +1,17 @@
-#añadir datos
+#configuracion general (se puede hacer en cualquier momento)
+
+#datos del usuario
 git config --global user.name "nombre_usuario"
 git config --global user.email "email_id"
 
-#hacer init en la carpeta correspondiente y despues pararse en ese directorio
-git init Mytest
+#crear rama
+git checkout -b "nombre_nueva_rama"
 
-#editar todo lo necesario
+#cambiar de rama
+git checkout "nombre_rama"
 
-#aplicar add a todos los files modificados
-git add "file.txt"
-
-#hacer commit
-git commit -m "mensaje"
-
-#crear el origin
-git remote add origin "https://link"
-
-#hacer push
-git push origin master
-
-
+#borrar rama
+git checkout "nombre_rama"
 
 #///////////////////////////
 
@@ -27,8 +19,20 @@ git push origin master
 git init
 
 
-#añadir datos
-git config --global user.name "nombre_usuario"
-git config --global user.email "email_id"
+#clonar repo de la nube
+git clone linkdelrepo
 
-#hacer pull
+#editar le que queremos
+
+#hacer un add
+git add fyle_name.type
+
+#comitear
+git commit -m "mensaje"
+
+#hacer push
+git push origin "nombre rama"
+#capas si no funciona hay que hacer un:
+git remote add origin url
+
+#/////////////////////
