@@ -39,11 +39,11 @@ const deleteUser = async (req,res)=>{
 
 const updateUser = async (req,res)=>{
 
-    const {nom, ape} = req.body;
+    const {firstName, lastName} = req.body;
 
-    const response = await pool.query('UPDATE actor SET first_name = $1, last_name = $2 WHERE actor_id = $3',[nom,ape, req.params.id]);
+    const response = await pool.query('UPDATE actor SET first_name = $1, last_name = $2 WHERE actor_id = $3',[firstName,lastName, req.params.id]);
 
-    res.send("Entranste por update!! "+nom+" "+ape+" "+req.params.id);
+    res.send("Entranste por update!! "+firstName+" "+lastName+" "+req.params.id);
 }
 
 module.exports = {
