@@ -1,17 +1,35 @@
 
 const { response } = require('express');
-const { Pool } = require('pg');
+//const {pool, sequelize} = require('./db-conexion');
+//const Actor = require('../models/actor');
+/////
+const {sequelize, DataTypes} = require('./db-conexion');
 
-const pool = new Pool ({
-  host:'localhost',
-  user:'postgres',
-  password:'gn0s1da',
-  database:'dvdrental'  
-})
+
+const Actor = sequelize.define("actor",{
+    first_name: DataTypes.TEXT,
+    last_name: DataTypes.TEXT
+},{
+    tableName: 'actor'
+});
+////
 
 const getRaiz = (req,res) =>{
     res.send("Api de Pablo");
 };
+
+
+const getActors = async (req,res)=>{
+    await sequelize.sync();
+
+    const Actors = await Actor.findAll({
+        attributes:['first_name', 'last_name']
+    });
+    console.log("ALL users: ", JSON.stringify(Actors,null,2));
+    res.json(Actors);
+};
+
+/*
 
 const getUsers = async (req,res)=>{
     const response = await pool.query('SELECT * FROM actor')
@@ -49,12 +67,13 @@ const updateUser = async (req,res)=>{
 
     res.send("Entranste por update!! "+firstName+" "+lastName+" "+req.params.id);
 }
-
+*/
 module.exports = {
-    getUsers,
+    /*getUsers,
     addUser,
     getUserById,
     deleteUser,
-    updateUser,
-    getRaiz
+    updateUser,*/
+    getRaiz,
+    getActors,
 } 
