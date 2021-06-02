@@ -9,6 +9,10 @@ const pool = new Pool ({
   database:'dvdrental'  
 })
 
+const getRaiz = (req,res) =>{
+    res.send("Api de Pablo");
+};
+
 const getUsers = async (req,res)=>{
     const response = await pool.query('SELECT * FROM actor')
     res.json(response.rows);
@@ -51,5 +55,6 @@ module.exports = {
     addUser,
     getUserById,
     deleteUser,
-    updateUser
+    updateUser,
+    getRaiz
 } 
