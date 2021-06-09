@@ -1,15 +1,16 @@
-const express = require('express');
-const app = express ();
+import express from 'express';
+import consign from 'consign'; //nos permite estrucuturar el proyecto
 
-//middlewares
-app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+const app = express();
 
-//routes
-app.use(require('./routes/index'));
+consign({  // cwd --> current working directory
+    cwd:__dirname 
+})
+    .include('libs/config.js')
+    .then('db.js') 
+    .then('libs/middlewares.js')
+    .then('routes')
+    .then('libs/boot.js')
+    .into(app) // funciona como parametro para las llamadas de [include] y [then]
 
 
-
-app.listen(3000,()=>{
-    console.log("hola, estoy escuchando");
-});
