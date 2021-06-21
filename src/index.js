@@ -13,5 +13,5 @@ consign({  // cwd --> current working directory
     .then('libs/boot.js')
     .into(app) // funciona como parametro para las llamadas de [include] y [then]
 
-//PARA CORRER EL PROGRAMA USANDO NODEMON PROBAR 
+//PARA CORRER EL PROGRAMA USANDO NODEMON PROBAR   
 //npm run dev

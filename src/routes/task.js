@@ -29,7 +29,7 @@ module.exports = app =>{
         })
         .put((req,res)=>{
             Tasks.update(req.body,{where: req.params})
-            .then(result => res.status(204))
+            .then(result => res.send("Objeto actualizado"))
             .catch(error => {
                 res.status(412).json({msg: error.message});
             });
