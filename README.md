@@ -8,4 +8,3 @@
 - sequelize
 
 
-## NO tiene configurado los modelos de sequelize, ya que es la parte que deberia agregar de forma particular en cada proyecto.

@@ -4,7 +4,7 @@ module.exports = {
     password:'',
     params:{
         dialect: 'sqlite',
-        storage: 'ecommerce-db-2.sqlite',
+        storage: 'ecommerce-db.sqlite',
         define:{
             underscore: false
         },
