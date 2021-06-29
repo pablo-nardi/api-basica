@@ -1,15 +1,14 @@
-const express = require('express');
-const app = express ();
+import express from 'express'
+import consign from 'consign'
 
-//middlewares
-app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+const app = express();
 
-//routes
-app.use(require('./routes/index'));
-
-
-
-app.listen(3000,()=>{
-    console.log("hola, estoy escuchando");
+consign({
+    cwd:__dirname
 })
+    .include('libs/middlewares.js')
+    .then('libs/boot.js')
+    .into(app)
+
+
+
